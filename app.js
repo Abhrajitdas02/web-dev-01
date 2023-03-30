@@ -1,17 +1,10 @@
-const button = document.querySelector('#changeColor');
-const container = document.querySelector('#container');
+const input = document.querySelector('input');
+const h1 = document.querySelector('h1');
 
-button.addEventListener('click', function (e) {
-    container.style.backgroundColor = makeRandColor();
-    e.stopPropagation();
-})
-container.addEventListener('click', function () {
-    container.classList.toggle('hide');
-})
+// input.addEventListener('change', function (e) {
+//     console.log("CASKDJASKJHD")
+// })
 
-const makeRandColor = () => {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+input.addEventListener('input', function (e) {
+    h1.innerText = input.value;
+})
